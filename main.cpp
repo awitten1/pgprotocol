@@ -43,6 +43,6 @@ Args parse_cli_params(int argc, char** argv) {
 int main(int argc, char** argv) {
     Args args = parse_cli_params(argc, argv);
     std::cout << args.dbname << " " << args.host << " " << args.port << std::endl;
-    net::connect(args.host);
+    net::connect(args.host, args.port);
     return 0;
 }
