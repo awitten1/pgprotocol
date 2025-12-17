@@ -2,7 +2,8 @@
 #include <cstdint>
 #include <cstdlib>
 #include <iostream>
-#include <boost/asio.hpp>
+
+#include "network.hpp"
 
 struct Args {
     std::string password;
@@ -42,5 +43,6 @@ Args parse_cli_params(int argc, char** argv) {
 int main(int argc, char** argv) {
     Args args = parse_cli_params(argc, argv);
     std::cout << args.dbname << " " << args.host << " " << args.port << std::endl;
+    net::connect(args.host);
     return 0;
 }

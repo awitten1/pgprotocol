@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.22)
 
 project(pgprotocol LANGUAGES CXX)
 
-find_package(Boost REQUIRED)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+find_package(Boost REQUIRED CONFIG)
 
 add_subdirectory(src)
 
